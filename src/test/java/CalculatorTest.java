@@ -20,7 +20,7 @@ public class CalculatorTest {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("deviceName", "pixel");
         capabilities.setCapability("platformName", "Android");
-            capabilities.setCapability("platformVersion", "9.0");
+        capabilities.setCapability("platformVersion", "9.0");
         capabilities.setCapability("udid", "emulator-5554");
         capabilities.setCapability("appPackage", "com.vbanthia.androidsampleapp");
         capabilities.setCapability("appActivity", "com.vbanthia.androidsampleapp.MainActivity");
@@ -291,7 +291,17 @@ public class CalculatorTest {
 
     }
     @Test(priority = 28)
-    private void testSubtractionTwoBigNumbers() throws InterruptedException {
+    private void testAdditionTwoNegativeBigNumbers()
+    {
+        calcPage.SetFirstField("-10000000000000");
+        calcPage.SetSecondField("-5000000000000");
+        calcPage.ClickAddButton();
+
+        Assert.assertEquals(calcPage.GetResultField(), "-10000000000.00 + -5000000000000.00 = -15000000000000.00", "Result should be -15000000000000");
+
+    }
+    @Test(priority = 29)
+    private void testSubtractionTwoBigNumbers() {
         calcPage.SetFirstField("10000000000000");
         calcPage.SetSecondField("5000000000000");
         calcPage.ClickSubButton();
@@ -299,8 +309,17 @@ public class CalculatorTest {
         Assert.assertEquals(calcPage.GetResultField(), "10000000000.00 - 5000000000000.00 = 5000000000000.00", "Result should be 5000000000000");
 
     }
-    @Test(priority = 29)
-    private void testMultiplyTwoBigNumbers() throws InterruptedException {
+    @Test(priority = 30)
+    private void testSubtractionTwoNegativeBigNumbers() {
+        calcPage.SetFirstField("-10000000000000");
+        calcPage.SetSecondField("-5000000000000");
+        calcPage.ClickSubButton();
+
+        Assert.assertEquals(calcPage.GetResultField(), "-10000000000.00 - -5000000000000.00 = -5000000000000.00", "Result should be -5000000000000");
+
+    }
+    @Test(priority = 31)
+    private void testMultiplyTwoBigNumbers() {
         calcPage.SetFirstField("10000000000");
         calcPage.SetSecondField("5000");
         calcPage.ClickMulButton();
@@ -308,7 +327,16 @@ public class CalculatorTest {
         Assert.assertEquals(calcPage.GetResultField(), "10000000000.00 * 5000.00 = 50000000000000.00", "Result should be 5000000000000");
 
     }
-    @Test(priority = 30)
+    @Test(priority = 32)
+    private void testMultiplyTwoNegativeBigNumbers() {
+        calcPage.SetFirstField("-10000000000");
+        calcPage.SetSecondField("-5000");
+        calcPage.ClickMulButton();
+
+        Assert.assertEquals(calcPage.GetResultField(), "-10000000000.00 * -5000.00 = 50000000000000.00", "Result should be 5000000000000");
+
+    }
+    @Test(priority = 33)
     private void testDivTwoBigNumbers() throws InterruptedException {
         calcPage.SetFirstField("10000000000");
         calcPage.SetSecondField("5000");
@@ -317,17 +345,26 @@ public class CalculatorTest {
         Assert.assertEquals(calcPage.GetResultField(), "10000000000.00 / 5000.00 = 2000000.00", "Result should be 2000000");
 
     }
+    @Test(priority = 34)
+    private void testDivTwoNegativeBigNumbers() throws InterruptedException {
+        calcPage.SetFirstField("-10000000000");
+        calcPage.SetSecondField("-5000");
+        calcPage.ClickDivButton();
 
-    @Test(priority = 31)
+        Assert.assertEquals(calcPage.GetResultField(), "-10000000000.00 / -5000.00 = 2000000.00", "Result should be 2000000");
+
+    }
+
+    @Test(priority = 35)
     private void testAdditionNumbersWithSpace() {
         calcPage.SetFirstField("5 5");
         calcPage.SetSecondField("2 2");
         calcPage.ClickAddButton();
 
-        Assert.assertEquals( calcPage.GetResultField(), "Please, fill the input fields correctly");
+        Assert.assertEquals(calcPage.GetResultField(), "Please, fill the input fields correctly");
 
     }
-    @Test(priority = 32)
+    @Test(priority = 36)
     private void testSubtractionNumbersWithSpace() {
         calcPage.SetFirstField("5 5");
         calcPage.SetSecondField("2 2");
@@ -336,7 +373,7 @@ public class CalculatorTest {
         Assert.assertEquals( calcPage.GetResultField(), "Please, fill the input fields correctly");
 
     }
-    @Test(priority = 33)
+    @Test(priority = 37)
     private void testMultiplyNotNumbersInFields()
     {
         calcPage.SetFirstField("aA");
@@ -346,7 +383,7 @@ public class CalculatorTest {
         Assert.assertEquals(calcPage.GetResultField(), "Please, fill the input fields correctly");
 
     }
-    @Test(priority = 34)
+    @Test(priority = 38)
     private void testDivNotNumbersInFields()
     {
         calcPage.SetFirstField("2A");
