@@ -48,7 +48,7 @@ public class CalculatorTest {
     //testing integer numbers
     @Test(priority = 2)
     private void testAdditionTwoPositiveNumbers() {
-        calcPage.SetFirstField("5");                                                                                                                       ;
+        calcPage.SetFirstField("5");
         calcPage.SetSecondField("2");
         calcPage.ClickAddButton();
 
@@ -57,7 +57,7 @@ public class CalculatorTest {
     }
     @Test(priority = 3)
     private void testAdditionTwoNegativeNumbers() {
-        calcPage.SetFirstField("-5");                                                                                                                       ;
+        calcPage.SetFirstField("-5");
         calcPage.SetSecondField("-2");
         calcPage.ClickAddButton();
 
@@ -66,7 +66,7 @@ public class CalculatorTest {
     }
     @Test(priority = 4)
     private void testAdditionTwoZeros() {
-        calcPage.SetFirstField("0");                                                                                                                       ;
+        calcPage.SetFirstField("0");
         calcPage.SetSecondField("0");
         calcPage.ClickAddButton();
 
@@ -76,7 +76,7 @@ public class CalculatorTest {
 
     @Test(priority = 5)
     private void testSubtractionTwoPositiveNumbers() {
-        calcPage.SetFirstField("5");                                                                                                                       ;
+        calcPage.SetFirstField("5");
         calcPage.SetSecondField("2");
         calcPage.ClickSubButton();
 
@@ -85,7 +85,7 @@ public class CalculatorTest {
     }
     @Test(priority = 6)
     private void testSubtractionTwoNegativeNumbers() {
-        calcPage.SetFirstField("-5");                                                                                                                       ;
+        calcPage.SetFirstField("-5");
         calcPage.SetSecondField("-2");
         calcPage.ClickSubButton();
 
@@ -94,7 +94,7 @@ public class CalculatorTest {
     }
     @Test(priority = 7)
     private void testSubtractionTwoZeros() {
-        calcPage.SetFirstField("0");                                                                                                                       ;
+        calcPage.SetFirstField("0");
         calcPage.SetSecondField("0");
         calcPage.ClickSubButton();
 
@@ -104,7 +104,7 @@ public class CalculatorTest {
 
     @Test(priority = 8)
     private void testMultiplyTwoPositiveNumbers() {
-        calcPage.SetFirstField("5");                                                                                                                       ;
+        calcPage.SetFirstField("5");
         calcPage.SetSecondField("2");
         calcPage.ClickMulButton();
 
@@ -113,7 +113,7 @@ public class CalculatorTest {
     }
     @Test(priority = 9)
     private void testMultiplyTwoNegativeNumbers() {
-        calcPage.SetFirstField("-5");                                                                                                                       ;
+        calcPage.SetFirstField("-5");
         calcPage.SetSecondField("-2");
         calcPage.ClickMulButton();
 
@@ -122,7 +122,7 @@ public class CalculatorTest {
     }
     @Test(priority = 10)
     private void testMultiplyTwoDifferentNumbers() {
-        calcPage.SetFirstField("-5");                                                                                                                       ;
+        calcPage.SetFirstField("-5");
         calcPage.SetSecondField("2");
         calcPage.ClickMulButton();
 
@@ -131,7 +131,7 @@ public class CalculatorTest {
     }
     @Test(priority = 11)
     private void testMultiplyTwoZeros() {
-        calcPage.SetFirstField("0");                                                                                                                       ;
+        calcPage.SetFirstField("0");
         calcPage.SetSecondField("0");
         calcPage.ClickMulButton();
 
