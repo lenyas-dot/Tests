@@ -57,10 +57,6 @@ public class CalculatorPage
     {
         return resultField.getText();
     }
-    public void SetResultField(String number)
-    {
-        resultField.setValue(number);
-    }
     public void ClickAddButton()
     {
         addButton.click();
